@@ -54,3 +54,6 @@ group :development do
   gem 'rack-livereload'
 end
 
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
+end
