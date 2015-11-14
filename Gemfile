@@ -52,6 +52,12 @@ group :development do
 
   gem 'foreman'
   gem 'spring'
+
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'letter_opener'
+
+  # Guards
   gem 'guard-rspec', require: false
   gem 'guard-livereload'
   gem 'rack-livereload'
