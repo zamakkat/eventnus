@@ -4,11 +4,13 @@
   .form-inputs
     = f.input :name
     = f.input :venue
-    = f.input :date, as: :string, input_html: {type: :date}
-    = f.input :start_time, as: :string, input_html: {type: :time}
-    = f.input :end_time, as: :string, input_html: {type: :time}
+    = f.input :date, as: :string, input_html: { type: :date, value: @event.date || Date.today }
+    = f.input :start_time, as: :string, input_html: { type: :time, value: @event.start_time.to_formatted_s(:time) || Time.now.to_formatted_s(:time) }
+    = f.input :end_time, as: :string, input_html: { type: :time, value: @event.end_time.to_formatted_s(:time) || Time.now.to_formatted_s(:time) }
     = f.input :url
     = f.input :details
 
   .form-actions
     = f.button :submit
+
+  = link_to "Cancel", events_path
