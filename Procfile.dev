@@ -1,0 +1,4 @@
+web:       bundle exec puma -C config/puma.rb -q -p 3000
+postgres:  postgres -D /usr/local/var/postgres
+guard:     bundle exec guard -i
+log:       tail -f log/development.log
