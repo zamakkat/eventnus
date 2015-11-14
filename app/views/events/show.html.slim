@@ -1,12 +1,14 @@
 h1 = title @event.name
 
-.row
-  .col-xs-12
-    .panel.panel-default
-      table.table.table-striped
-        tbody
-          - @event.attributes.each_pair do |attr, value|
-            = render_attr_value attr, value
+- @event.participants.each do |user|
+  .chip
+    = image_tag '', alt: user.name
+    = user.name
+
+table.bordered
+  tbody
+    - @event.attributes.each_pair do |attr, value|
+      = render_attr_value attr, value
 
 = link_to edit_event_path(@event), class: 'btn btn-warning btn-sm' do
   = t('helpers.links.edit', model: Event.model_name.human)
