@@ -6,21 +6,21 @@ R = React.DOM
 
 @Navbar = React.createClass
 	render: ->
-		(R.nav {className: "white", role: "navigation"}, [
-			(R.div {className: "nav-wrapper container"}, [
-				(R.a {className: "brand-logo", id: "logo-container"}, 'EventNUS'),
-				(R.ul {className: "right hide-on-med-and-down"}, [
+		(R.nav {className: 'black', role: 'navigation'}, [
+			(R.div {className: 'nav-wrapper container'}, [
+				(R.a {className: 'brand-logo', id: 'logo-container'}, 'EventNUS'),
+				(R.ul {className: 'right hide-on-med-and-down'}, [
 					(R.li {}, [
-						(R.a {href: '#'}, 'Navbar Link')
+						(R.a {href: '/events'}, 'Events')
 					])
 				]),
-				(R.ul {className: "side-nav", id: "nav-mobile"}, [
+				(R.ul {className: 'side-nav', id: 'nav-mobile'}, [
 					(R.li {}, [
-						(R.a {href: '#'}, 'Navbar Link')
+						(R.a {href: '/events'}, 'Events')
 					])
 				]),
-				(R.a {className: "button-collapse", href: "#", dataActivates: "nav-mobile"}, [
-					(R.i {className: "material-icons"}, 'menu')
+				(R.a {className: 'button-collapse', href: '#', dataActivates: 'nav-mobile'}, [
+					(R.i {className: 'material-icons'}, 'menu')
 				])
 			])
 		])
