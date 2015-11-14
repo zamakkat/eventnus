@@ -20,13 +20,13 @@ table.table.table-hover
         td= local_time event.start_time, '%H:%M'
         td= local_time event.end_time, '%H:%M'
         td.text-right
-          = link_to event_path(event), class: 'btn btn-success btn-sm' do
-            = t('helpers.links.show', model: Event.model_name.human)
+          = link_to event_path(event), class: 'btn-floating blue' do
+            i.material-icons info_outline
           ' &nbsp;
-          = link_to edit_event_path(event), class: 'btn btn-warning btn-sm' do
-            = t('helpers.links.edit', model: Event.model_name.human)
+          = link_to edit_event_path(event), class: 'btn-floating yellow' do
+            i.material-icons mode_edit
           ' &nbsp;
-          = link_to event_path(event), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } do
-            = t('helpers.links.destroy', model: Event.model_name.human)
+          = link_to event_path(event), class: 'btn-floating red', method: :delete, data: { confirm: 'Are you sure?' } do
+            i.material-icons delete
 
 = paginate(@events)
