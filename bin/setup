@@ -16,8 +16,15 @@ Dir.chdir APP_ROOT do
   # unless File.exist?("config/database.yml")
   #   system "cp config/database.yml.sample config/database.yml"
   # end
-  unless File.exist?("Procfile.dev")
-    system "cp Procfile.dev.sample Procfile.dev"
+
+  puts "\n== Copying .env =="
+  if !File.exist?('.env') && File.exist?('.env.sample')
+    system `cp .env.sample .env`
+  end
+
+  puts "\n== Copying Procfile.dev =="
+  if !File.exist?('Procfile.dev') && File.exist?('Procfile.dev.sample')
+    system`cp Procfile.dev.sample Procfile.dev`
   end
 
   puts "\n== Preparing database =="
