@@ -1,5 +1,7 @@
 # eventnus
 
+[![Build Status](https://travis-ci.org/zamakkat/eventnus.svg?branch=master)](https://travis-ci.org/zamakkat/eventnus)
+
 [![Code Climate](https://codeclimate.com/github/zamakkat/eventnus/badges/gpa.svg)](https://codeclimate.com/github/zamakkat/eventnus)
 [![Test Coverage](https://codeclimate.com/github/zamakkat/eventnus/badges/coverage.svg)](https://codeclimate.com/github/zamakkat/eventnus/coverage)
 
