@@ -16,11 +16,10 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
-//= require local_time
 //= require components
 //= require_tree .
 
-$('.datepicker').pickadate({
+$('.datepicker').data({behaviour: "datepicker"}).pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
