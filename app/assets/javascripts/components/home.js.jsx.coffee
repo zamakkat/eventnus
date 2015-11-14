@@ -10,7 +10,7 @@ R = React.DOM
       menuWidth: 300
 
   render: ->
-  	return (R.nav { className: 'white', role: 'navigation' }, [
+  	return (R.nav { className: 'black', role: 'navigation' }, [
   			(R.div { className: 'nav-wrapper container' }, [
   				(R.a { href: '/', className: 'brand-logo', id: 'logo-container' }, 'EventNUS'),
   				(R.ul { className: 'right hide-on-med-and-down' }, [
