@@ -31,7 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # App specific
 gem 'devise'
-gem 'cancancan'
+# gem 'cancancan'
 gem 'simple_form'
 
 group :development, :test do
