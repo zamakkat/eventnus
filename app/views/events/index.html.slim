@@ -1,32 +1,33 @@
-h1= title 'Events'
-.right
-  = link_to t('helpers.links.new', model: Event.model_name.human), new_event_path, class: 'btn btn-primary'
+.container
+  h1= title 'Events'
+  .right
+    = link_to t('helpers.links.new', model: Event.model_name.human), new_event_path, class: 'btn btn-primary'
 
-table.table.table-hover
-  thead
-    tr
-      th Name
-      th Venue
-      th Date
-      th Start Time
-      th End Time
-      th
-  tbody
-    - @events.each do |event|
+  table.table.table-hover
+    thead
       tr
-        td= event.name
-        td= event.venue
-        td= local_time event.date, '%d/%m/%y'
-        td= local_time event.start_time, '%H:%M'
-        td= local_time event.end_time, '%H:%M'
-        td.text-right
-          = link_to event_path(event), class: 'btn-floating blue' do
-            i.material-icons info_outline
-          ' &nbsp;
-          = link_to edit_event_path(event), class: 'btn-floating yellow' do
-            i.material-icons mode_edit
-          ' &nbsp;
-          = link_to event_path(event), class: 'btn-floating red', method: :delete, data: { confirm: 'Are you sure?' } do
-            i.material-icons delete
+        th Name
+        th Venue
+        th Date
+        th Start Time
+        th End Time
+        th
+    tbody
+      - @events.each do |event|
+        tr
+          td= event.name
+          td= event.venue
+          td= local_time event.date, '%d/%m/%y'
+          td= local_time event.start_time, '%H:%M'
+          td= local_time event.end_time, '%H:%M'
+          td.text-right
+            = link_to event_path(event), class: 'btn-floating blue' do
+              i.material-icons info_outline
+            ' &nbsp;
+            = link_to edit_event_path(event), class: 'btn-floating yellow' do
+              i.material-icons mode_edit
+            ' &nbsp;
+            = link_to event_path(event), class: 'btn-floating red', method: :delete, data: { confirm: 'Are you sure?' } do
+              i.material-icons delete
 
-= paginate(@events)
+  = paginate(@events)
