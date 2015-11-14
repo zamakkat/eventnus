@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }, path: '', path_names: { sign_in: 'sign-in', sign_up: 'sign-up', sign_out: 'sign-out', edit: 'profile' }
+  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }, path: '', path_names: { sign_in: 'sign-in', sign_up: 'sign-up', sign_out: 'sign-out', edit: 'profile' }
 
   match 'auth/:provider/callback', to: 'sessions#oauth', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
