@@ -133,6 +133,7 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.4.1)
       launchy (~> 2.2)
+    libv8 (3.16.14.13)
     listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -143,6 +144,8 @@ GEM
       mime-types (>= 1.16, < 3)
     materialize-sass (0.97.2)
       sass (~> 3.3)
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
@@ -328,6 +331,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   materialize-sass
+  meta-tags
   omniauth
   omniauth-facebook
   pg (~> 0.15)
