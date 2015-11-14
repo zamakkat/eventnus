@@ -4,6 +4,27 @@
 
 R = React.DOM
 
+@Navbar = React.createClass
+	render: ->
+		(R.nav {className: "white", role: "navigation"}, [
+			(R.div {className: "nav-wrapper container"}, [
+				(R.a {className: "brand-logo", id: "logo-container"}, 'EventNUS'),
+				(R.ul {className: "right hide-on-med-and-down"}, [
+					(R.li {}, [
+						(R.a {href: '#'}, 'Navbar Link')
+					])
+				]),
+				(R.ul {className: "side-nav", id: "nav-mobile"}, [
+					(R.li {}, [
+						(R.a {href: '#'}, 'Navbar Link')
+					])
+				]),
+				(R.a {className: "button-collapse", href: "#", dataActivates: "nav-mobile"}, [
+					(R.i {className: "material-icons"}, 'menu')
+				])
+			])
+		])
+
 @TestReact = React.createClass
 	render: ->
 		(R.h1 {}, 'Home#index')
@@ -11,4 +32,3 @@ R = React.DOM
 @TestReact2 = React.createClass
 	render: -> 
 		(R.p {}, 'Find me in app/views/home/index.html.slim')
-

@@ -1,13 +1,1 @@
-nav.white role='navigation'
-  .nav-wrapper.container
-    = link_to 'EventNUS', root_path, class: 'brand-logo', id: 'logo-container'
-    ul.right.hide-on-med-and-down
-      li
-        a href='#' Navbar Link
-
-    ul.side-nav#nav-mobile
-      li
-        a href='#' Navbar Link
-
-    a.button-collapse href='#' data-activates='nav-mobile'
-      i class='material-icons' menu
+= react_component('Navbar')
