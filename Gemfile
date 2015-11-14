@@ -40,6 +40,7 @@ gem 'cancancan'
 gem 'simple_form'
 
 gem 'meta-tags'
+gem 'local_time'
 gem 'kaminari'
 gem 'bitmask_attributes'
 

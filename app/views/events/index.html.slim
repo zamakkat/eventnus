@@ -5,12 +5,20 @@ h1= title 'Events'
 table.table.table-hover
   thead
     tr
-      th id
+      th Name
+      th Venue
+      th Date
+      th Start Time
+      th End Time
       th
   tbody
     - @events.each do |event|
       tr
-        td= link_to event.to_param, event
+        td= event.name
+        td= event.venue
+        td= local_time event.date, '%d/%m/%y'
+        td= local_time event.start_time, '%H:%M'
+        td= local_time event.end_time, '%H:%M'
         td.text-right
           = link_to event_path(event), class: 'btn btn-success btn-sm' do
             = t('helpers.links.show', model: Event.model_name.human)
