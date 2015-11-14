@@ -15,8 +15,12 @@ html(lang='en')
     = csrf_meta_tags
 
   body
-    = render 'layouts/header'
+    section.wrapper
+      = render 'layouts/header'
 
-    = yield
+      .block.push
+        .content
+          .container
+            = yield
 
-    = render 'layouts/footer'
+      = render 'layouts/footer'
