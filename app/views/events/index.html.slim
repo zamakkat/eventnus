@@ -1,0 +1,24 @@
+h1= title 'Events'
+.right
+  = link_to t('helpers.links.new', model: Event.model_name.human), new_event_path, class: 'btn btn-primary'
+
+table.table.table-hover
+  thead
+    tr
+      th id
+      th
+  tbody
+    - @events.each do |event|
+      tr
+        td= link_to event.to_param, event
+        td.text-right
+          = link_to event_path(event), class: 'btn btn-success btn-sm' do
+            = t('helpers.links.show', model: Event.model_name.human)
+          ' &nbsp;
+          = link_to edit_event_path(event), class: 'btn btn-warning btn-sm' do
+            = t('helpers.links.edit', model: Event.model_name.human)
+          ' &nbsp;
+          = link_to event_path(event), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } do
+            = t('helpers.links.destroy', model: Event.model_name.human)
+
+= paginate(@events)

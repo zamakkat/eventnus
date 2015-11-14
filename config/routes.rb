@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   root 'home#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }, path: '', path_names: { sign_in: 'sign-in', sign_up: 'sign-up', sign_out: 'sign-out', edit: 'profile' }
