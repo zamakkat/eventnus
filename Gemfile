@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # App specific
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # gem 'cancancan'
 gem 'simple_form'
 
@@ -39,7 +41,7 @@ group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
   gem 'rspec-rails'
-  gem 'shoulda', require: false
+  gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'did_you_mean'
 end
