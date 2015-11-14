@@ -6,26 +6,29 @@ R = React.DOM
 
 @Navbar = React.createClass
   componentDidMount: ->
+    $('.button-collapse').sideNav
+      menuWidth: 300
 
-	render: ->
-		(R.nav { className: 'white', role: 'navigation' }, [
-			(R.div { className: 'nav-wrapper container' }, [
-				(R.a { href: '/', className: 'brand-logo', id: 'logo-container' }, 'EventNUS'),
-				(R.ul { className: 'right hide-on-med-and-down' }, [
-					(R.li {}, [
-						(R.a { href: '/events' }, 'Events')
-					])
-				]),
-				(R.ul { className: 'side-nav', id: 'nav-mobile' }, [
-					(R.li {}, [
-						(R.a { href: '/events' }, 'Events')
-					])
-				]),
-				(R.a { className: 'button-collapse', href: '#', dataActivates: 'nav-mobile' }, [
-					(R.i { className: 'material-icons' }, 'menu')
-				])
-			])
-		])
+  render: ->
+  	return (R.nav { className: 'white', role: 'navigation' }, [
+  			(R.div { className: 'nav-wrapper container' }, [
+  				(R.a { href: '/', className: 'brand-logo', id: 'logo-container' }, 'EventNUS'),
+  				(R.ul { className: 'right hide-on-med-and-down' }, [
+  					(R.li {}, [
+  						(R.a { href: '/events' }, 'Events')
+  					])
+  				]),
+  				(R.ul { className: 'side-nav', id: 'nav-mobile' }, [
+  					(R.li {}, [
+  						(R.a { href: '/events' }, 'Events')
+  					])
+  				]),
+  				(R.a { className: 'button-collapse', href: '#', 'data-activates': 'nav-mobile' }, [
+  					(R.i { className: 'material-icons' }, 'menu')
+  				])
+  			])
+  		])
+
 
 @TestReact = React.createClass
 	render: ->
