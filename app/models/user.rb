@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one  :oauth_account  , dependent: :destroy
-  has_and_belongs_to_many :events, join_table: :events_users
+  has_and_belongs_to_many :events, join_table: :events_users, uniq: true
 
   # Custom
   # Include default devise modules. Others available are:

@@ -18,6 +18,7 @@ html(lang='en')
   body
     = render 'layouts/header'
 
+    = react_component 'FlashMessages', flash_messages: flash
     = yield
 
     = render 'layouts/footer'

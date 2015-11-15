@@ -8,7 +8,6 @@
     # $('.dropdown-button').dropdown()
     
   render: ->
-    console.log(this.props.current_user)
     if this.props.current_user
       Status = `<li><a href='/sign-out' data-method='delete'>Sign out</a></li>`
     else 
@@ -31,3 +30,10 @@
                 </div>
               </nav>`
 
+@FlashMessages = React.createClass
+  componentDidMount: ->
+    for f in this.props.flash_messages
+      Materialize.toast(f[1], 4000)
+
+  render: ->
+    return `<div></div>`

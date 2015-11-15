@@ -6,6 +6,9 @@
       = image_tag '', alt: user.name
       = user.name
 
+  - if user_signed_in? && can?(:join, @event) && !@event.participants.include?(current_user)
+    = link_to 'Join event', join_event_path, method: :post
+
   table.bordered
     tbody
       - @event.attributes.each_pair do |attr, value|
