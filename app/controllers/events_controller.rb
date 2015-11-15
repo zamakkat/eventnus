@@ -35,6 +35,15 @@ class EventsController < ApplicationController
     redirect_to events_url, notice: "#{Event.model_name.human} was successfully destroyed"
   end
 
+  def join
+    if current_user && !@event.participants.include?(current_user)
+      @event.participants << current_user
+      redirect_to @event, notice: "Joined #{Event.model_name.human} successfully."
+    else
+      redirect_to @event, notice: "Already joined event or session timed out."
+    end
+  end
+
   private
 
     def model_params

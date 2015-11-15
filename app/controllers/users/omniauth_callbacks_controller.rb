@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @oauth = OauthAccount.find_or_initialize_from_omniauth(auth_hash)
 
     if @user
-      render
+      sign_in_and_redirect(@user, event: :authentication)
     elsif @oauth.save
       set_flash_message(:notice, :success, kind: 'Facebook') if is_navigational_format?
       sign_in_and_redirect(@oauth.user, event: :authentication)

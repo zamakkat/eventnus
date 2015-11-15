@@ -22,3 +22,11 @@
                 </a>
               </div>
             </nav>`
+
+@FlashMessages = React.createClass
+  componentDidMount: ->
+    for f in this.props.flash_messages
+      Materialize.toast(f[1], 4000)
+
+  render: ->
+    return `<div></div>`
